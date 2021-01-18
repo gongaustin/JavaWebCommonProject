@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * @Description:
+ * @Description:启动器Starter
  * @Author: GongJun
  * @Date: Created in 11:16 2021/1/18
  * */
