@@ -1,4 +1,4 @@
-package com.austin.common.core.response;
+package com.austin.common.core.bean;
 
 /**
  * @Description:错误代码定义

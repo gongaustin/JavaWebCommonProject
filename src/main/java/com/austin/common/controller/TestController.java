@@ -1,7 +1,6 @@
 package com.austin.common.controller;
 
-import com.austin.common.core.response.Result;
-import org.springframework.stereotype.Controller;
+import com.austin.common.core.bean.Result;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
