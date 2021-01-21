@@ -51,7 +51,7 @@
             <scope>provided</scope>
         </dependency>
 
-        <!--aop（没啥好说的，AOP必须搞起）-->
+        <!--aop（没啥好说的，AOP面向切面）-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
@@ -108,7 +108,7 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
-        <!--Google guava 低版本会和swagger冲突-->
+        <!--Google guava 不要调低版本，低版本会和swagger冲突-->
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
@@ -150,12 +150,14 @@
             <artifactId>dom4j</artifactId>
             <version>1.6.1</version>
         </dependency>
+
         <!--阿里巴巴fastjson工具包-->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.48</version>
         </dependency>
+
         <!--阿里巴巴druid连接池-->
         <dependency>
             <groupId>com.alibaba</groupId>
