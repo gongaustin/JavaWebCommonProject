@@ -5,5 +5,5 @@ package com.austin.common.service;
  * @Author: GongJun
  * @Date: Created in 16:59 2021/1/18
  */
-public interface TestService {
+public interface ITestService {
 }
