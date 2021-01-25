@@ -6,7 +6,7 @@ import org.springframework.context.annotation.ComponentScan;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
- * @Description:启动器Starter
+ * @Description:启动器Starter，发现bean注册并进IOC容器
  * @Author: GongJun
  * @Date: Created in 11:16 2021/1/18
  * */
