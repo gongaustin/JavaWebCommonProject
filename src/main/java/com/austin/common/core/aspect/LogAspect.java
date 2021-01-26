@@ -9,7 +9,6 @@ import com.austin.common.utils.JWTUtil;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -29,7 +28,7 @@ import java.util.Date;
  */
 @Aspect
 @Component
-public class SysLogAspect {
+public class LogAspect {
     @Autowired
     private ILogService service;
 
