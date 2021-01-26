@@ -26,6 +26,7 @@ public class TestController {
         System.out.println("come on!");
         return Result.success("this is ok");
     }
+
     @MyLog("测试")
     @GetMapping("/test")
     public Result test(String s){
