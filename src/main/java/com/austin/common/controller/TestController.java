@@ -1,5 +1,6 @@
 package com.austin.common.controller;
 
+import com.austin.common.core.annotation.MyLog;
 import com.austin.common.core.bean.Result;
 import com.austin.common.service.ITestService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +26,7 @@ public class TestController {
         System.out.println("come on!");
         return Result.success("this is ok");
     }
-
+    @MyLog("测试")
     @GetMapping("/test")
     public Result test(String s){
         String data = this.service.getMessage(s);
