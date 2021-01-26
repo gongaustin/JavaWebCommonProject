@@ -5,12 +5,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;
 
 /**
- * <p>
- * 权限 Mapper 接口
- * </p>
- *
- * @author GongJun
- * @since 2019-08-28
+ * @Description:权限
+ * @Author: GongJun
+ * @Date: Created in 16:56 2021/1/18
  */
 @Mapper
 public interface PermissionMapper extends BaseMapper<Permission> {

@@ -9,12 +9,9 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * <p>
- * 角色 Mapper 接口
- * </p>
- *
- * @author GongJun
- * @since 2019-08-28
+ * @Description:角色
+ * @Author: GongJun
+ * @Date: Created in 16:56 2021/1/18
  */
 @Mapper
 public interface RoleMapper extends BaseMapper<Role> {

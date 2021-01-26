@@ -14,12 +14,9 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 /**
- * <p>
- * 用户人员 Mapper 接口
- * </p>
- *
- * @author GongJun
- * @since 2019-08-28
+ * @Description:用户
+ * @Author: GongJun
+ * @Date: Created in 16:56 2021/1/18
  */
 @Mapper
 public interface UserMapper extends BaseMapper<User> {
