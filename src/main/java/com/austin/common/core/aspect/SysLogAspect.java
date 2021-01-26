@@ -7,7 +7,9 @@ import com.austin.common.service.ILogService;
 import com.austin.common.utils.IPDeal;
 import com.austin.common.utils.JWTUtil;
 import org.aspectj.lang.JoinPoint;
+import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
+import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Pointcut;
 import org.aspectj.lang.reflect.MethodSignature;
@@ -77,20 +79,39 @@ public class SysLogAspect {
 
         //请求的参数
         Object[] args = joinPoint.getArgs();
+        //接口处理时间
+        ProceedingJoinPoint timeJoinPoint = (ProceedingJoinPoint)joinPoint;
+        try {
+            //开始时间
+            long startTime = System.currentTimeMillis();
+            timeJoinPoint.proceed(args);
+            //结束时间
+            long endTime = System.currentTimeMillis();
+            sysLog.setSpendTime((int)(endTime-startTime));
+        } catch (Throwable throwable) {
+            System.out.println(throwable.getMessage());
+        }
         //将参数所在的数组转换成json
         String params = JSON.toJSONString(args);
         sysLog.setParameter(params);
-        sysLog.setStartTime(new Date().getTime());
+        //获取操作开始时间
+        sysLog.setStartTime(new Date());
 
 
         //获取用户ip地址
         ServletRequestAttributes servletRequestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = servletRequestAttributes.getRequest();
+        //uri短链接
         sysLog.setUri(request.getRequestURI());
+        //url长链接
         sysLog.setUrl(request.getRequestURL().toString());
+        //根路径（包下的路径）
         sysLog.setBasePath(request.getServletPath());
+        //代理
         sysLog.setUserAgent(request.getHeader("User-Agent"));
+        //IP
         sysLog.setIp(IPDeal.getIpAddress(request));
+
         //获取用户名
         try {
             sysLog.setUsername(JWTUtil.getUsername());

@@ -1,12 +1,16 @@
 package com.austin.common.entity;
 
 
+import com.austin.common.core.constant.TimeConstant;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
  * <p>
@@ -37,8 +41,10 @@ public class Log implements Serializable {
     /**
      * 操作时间
      */
+    @JsonFormat(timezone = TimeConstant.TIME_ZONE, pattern = TimeConstant.DATETIME_FORMAT)
+    @DateTimeFormat(pattern = TimeConstant.DATETIME_FORMAT)
     @TableField("start_time")
-    private Long startTime;
+    private Date startTime;
     /**
      * 消耗时间
      */
@@ -102,11 +108,11 @@ public class Log implements Serializable {
         this.username = username;
     }
 
-    public Long getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Long startTime) {
+    public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
 

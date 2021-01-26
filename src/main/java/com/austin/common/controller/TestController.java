@@ -31,6 +31,11 @@ public class TestController {
     @GetMapping("/test")
     public Result test(String s){
         String data = this.service.getMessage(s);
+        try {
+            Thread.sleep(2000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
         return Result.success(data);
     }
 }
