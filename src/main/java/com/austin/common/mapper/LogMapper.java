@@ -13,7 +13,7 @@ import org.apache.ibatis.annotations.Mapper;
  * @since 2020-08-28
  */
 /**
- * @description: 高版本的MybatisPlus更规范了，Mapper中必须加上@Mapper注解，否则启动时容器无法注入bean
+ * @description: 高版本的MybatisPlus更规范了，Mapper中必须加上@Mapper注解，避免引起不必要的报错
  * @author: GongJun
  * @time: Created in 12:44 2021/1/22
  **/

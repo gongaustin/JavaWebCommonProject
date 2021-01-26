@@ -6,4 +6,5 @@ package com.austin.common.service;
  * @Date: Created in 16:59 2021/1/18
  */
 public interface ITestService {
+    String getMessage(String s);
 }
