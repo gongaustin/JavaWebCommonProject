@@ -23,7 +23,6 @@ public class TestController {
 
     @GetMapping("")
     public Result defaultMethod(){
-        System.out.println("come on!");
         return Result.success("this is ok");
     }
 
