@@ -14,11 +14,11 @@ import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
  */
 public class MpGenerator {
 
-    private static final String package_name = "com.austin.common";
-    private static final String driver_class_name = "com.mysql.cj.jdbc.Driver";
+    private static final String package_name = "com.austin.common";  //包名
+    private static final String driver_class_name = "com.mysql.cj.jdbc.Driver";   //数据库驱动
     private static final String url = "jdbc:mysql://127.0.0.1:3306/common?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8&&useSSL=true";
-    private static final String username = "root";
-    private static final String password = "123";
+    private static final String username = "root"; //用户名
+    private static final String password = "123";  //密码
 
     public static void main(String args[]) {
 

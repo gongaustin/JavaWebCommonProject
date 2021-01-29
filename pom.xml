@@ -218,7 +218,7 @@
             <version>3.3.2</version>
             <scope>compile</scope>
         </dependency>
-        <!-- 模板引擎 -->
+        <!-- 模板引擎 velocity和freemarker 若使用MpGenerator需要用到 -->
         <dependency>
             <groupId>org.apache.velocity</groupId>
             <artifactId>velocity-engine-core</artifactId>
