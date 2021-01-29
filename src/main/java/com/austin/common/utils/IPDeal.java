@@ -28,9 +28,9 @@ public class IPDeal {
      */
     public static String getAddressByIP(String strIP) {
         try {
-            URL url = new URL("http://api.map.baidu.com/location/ip?ak=F454f8a5efe5e577997931cc01de3974&ip=" + strIP);
+            URL url = new URL("http://whois.pconline.com.cn/ipJson.jsp?ip=" + strIP + "&json=true");
             URLConnection conn = url.openConnection();
-            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream(), "utf-8"));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream(), "gbk"));
             String line = null;
             StringBuffer result = new StringBuffer();
             while ((line = reader.readLine()) != null) {
@@ -40,13 +40,8 @@ public class IPDeal {
             String ipAddr = result.toString();
             try {
                 JSONObject obj1 = JSON.parseObject(ipAddr);
-                if ("0".equals(obj1.get("status").toString())) {
-                    JSONObject obj2 = JSON.parseObject(obj1.get("content").toString());
-                    JSONObject obj3 = JSON.parseObject(obj2.get("address_detail").toString());
-                    return obj3.get("city").toString();
-                } else {
-                    return "读取失败";
-                }
+                return obj1.getString("addr");
+
             } catch (JSONException e) {
                 e.printStackTrace();
                 return "读取失败";
