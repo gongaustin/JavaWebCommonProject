@@ -22,7 +22,7 @@ import java.lang.reflect.Method;
 import java.util.Date;
 
 /**
- * @Description:注解日志的处理
+ * @Description:使用切面对注解日志进行处理
  * @Author: GongJun
  * @Date: Created in 10:40 2021/1/21
  */
