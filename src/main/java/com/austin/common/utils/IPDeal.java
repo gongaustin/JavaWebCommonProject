@@ -30,6 +30,7 @@ public class IPDeal {
         try {
             URL url = new URL("http://whois.pconline.com.cn/ipJson.jsp?ip=" + strIP + "&json=true");
             URLConnection conn = url.openConnection();
+            //设置请求的编码为GBK,utf-8会乱码
             BufferedReader reader = new BufferedReader(new InputStreamReader(conn.getInputStream(), "gbk"));
             String line = null;
             StringBuffer result = new StringBuffer();
